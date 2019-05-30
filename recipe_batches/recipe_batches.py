@@ -3,7 +3,24 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  created_recipes = 0
+  count = len(recipe)
+
+  while(True):
+    if (count == 0):
+      created_recipes += 1
+      count = len(recipe)
+
+    for x in recipe:
+      if (x in ingredients):
+        val = ingredients[x] - recipe[x]
+        if (val >= 0):
+          ingredients[x] -= recipe[x]
+          count -= 1
+        else:
+          return created_recipes
+      else:
+        return created_recipes
 
 
 if __name__ == '__main__':
