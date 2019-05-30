@@ -22,7 +22,6 @@ def recipe_batches(recipe, ingredients):
       else:
         return created_recipes
 
-
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
   # your implementation with different inputs
