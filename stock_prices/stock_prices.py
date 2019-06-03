@@ -2,16 +2,39 @@
 
 import argparse
 
-def find_max_profit(prices):
-  current_max_profit = None
+# My first solution
 
-  for x in range(len(prices)):
-    for y in range(x + 1, len(prices)):
-      val = prices[y] - prices[x]
-      if (current_max_profit == None or val > current_max_profit):
-        current_max_profit = val
+# def find_max_profit(prices):
+#   current_max_profit = None
 
-  return current_max_profit
+#   for x in range(len(prices)):
+#     for y in range(x + 1, len(prices)):
+#       val = prices[y] - prices[x]
+#       if (current_max_profit == None or val > current_max_profit):
+#         current_max_profit = val
+
+#   return current_max_profit
+
+# My second solution
+
+def find_max_profit(stocks):
+  min = 0
+  max = None
+
+  next_stock = 1
+
+  while next_stock != len(stocks):
+    val = stocks[next_stock] - stocks[min]
+
+    if stocks[min] > stocks[next_stock]:
+      min += 1
+
+    if max == None or val > max:
+      max = val
+
+    next_stock += 1
+
+  return max
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
