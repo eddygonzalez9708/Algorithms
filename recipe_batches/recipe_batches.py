@@ -3,24 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  created_recipes = 0
-  count = len(recipe)
+  min = None
 
-  while(True):
-    if (count == 0):
-      created_recipes += 1
-      count = len(recipe)
+  for item, amount in recipe.items():
+    if item not in ingredients:
+      return 0
 
-    for x in recipe:
-      if (x in ingredients):
-        val = ingredients[x] - recipe[x]
-        if (val >= 0):
-          ingredients[x] -= recipe[x]
-          count -= 1
-        else:
-          return created_recipes
-      else:
-        return created_recipes
+    val = ingredients[item] // amount
+
+    if val == 0:
+      return 0
+    elif min == None or val < min:
+      min = val
+  
+  return min 
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
