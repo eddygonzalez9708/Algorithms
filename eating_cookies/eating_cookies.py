@@ -2,9 +2,7 @@
 
 import sys
 
-# The cache parameter is here for if you want to implement
-# a solution that is more efficient than the naive 
-# recursive solution
+# The cache parameter is here for if you want to implement a solution that is more efficient than the naive recursive solution.
 
 # Pattern Found - 1 1 2 4 7 13 24 44 81 149 274
 
