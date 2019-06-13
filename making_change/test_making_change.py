@@ -2,7 +2,6 @@ import unittest
 from making_change import making_change 
 
 class Test(unittest.TestCase):
-
   def setUp(self):
     self.denominations = [1, 5, 10, 25, 50]
 
@@ -24,7 +23,6 @@ class Test(unittest.TestCase):
     self.assertEqual(making_change(2000, self.denominations), 11712101)
     self.assertEqual(making_change(5000, self.denominations), 432699251)
     self.assertEqual(making_change(10000, self.denominations), 6794128501)
-
 
 if __name__ == '__main__':
   unittest.main()
