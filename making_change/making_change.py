@@ -6,7 +6,7 @@ def making_change(amount, denominations):
   cache = { 0: 1 }
 
   for a in range(denominations[0], amount + 1):
-    cache[a] = cache[a - 1]
+    cache[a] = cache[a - denominations[0]]
 
   for b in range(denominations[1], amount + 1):
     cache[b] = cache[b] + cache[b - denominations[1]]
